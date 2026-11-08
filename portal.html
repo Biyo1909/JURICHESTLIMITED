@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Portal | JURICHEST Limited</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon"><i class="fas fa-recycle"></i></span>
+        <span class="logo-text">JURICHEST</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="areas.html" class="nav-link">Service Areas</a>
+        <a href="portal.html" class="nav-link active">Customer Portal</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="portal.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Request Service</a>
+        <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Customer Portal</h1>
+      <p>View balance, payment history and when the next truck is coming to your street.</p>
+    </div>
+  </section>
+
+  <section class="portal-section">
+    <div class="container">
+      <!-- Login -->
+      <div class="auth-card" id="portalLogin">
+        <h2>Customer Login</h2>
+        <p class="subtitle">Access your waste management account</p>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="loginEmail">Email or Phone</label>
+            <input type="text" id="loginEmail" placeholder="e.g. you@email.com or 080..." required />
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" placeholder="Enter your password" required />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            <i class="fas fa-sign-in-alt"></i> Sign In
+          </button>
+          <p class="demo-note">
+            <i class="fas fa-info-circle"></i>
+            Demo: Use any email + any password to preview the dashboard.
+          </p>
+        </form>
+      </div>
+
+      <!-- Dashboard -->
+      <div class="dashboard hidden" id="portalDashboard">
+        <div class="dash-header">
+          <div>
+            <h2>Welcome back</h2>
+            <p class="dash-user" id="dashboardUser">Customer Account</p>
+          </div>
+          <button class="btn btn-outline btn-sm" id="logoutBtn">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </button>
+        </div>
+
+        <div class="dash-cards">
+          <div class="dash-card balance">
+            <div class="dash-label">Current Balance</div>
+            <div class="dash-value">₦18,500</div>
+            <div class="dash-sub">Outstanding for October 2026</div>
+            <div class="balance-actions">
+              <button class="btn btn-primary btn-sm" id="payBtn">
+                <i class="fas fa-credit-card"></i> Make Payment
+              </button>
+              <button class="btn btn-outline btn-sm" id="uploadReceiptBtn">
+                <i class="fas fa-upload"></i> Upload Receipt
+              </button>
+            </div>
+          </div>
+
+          <!-- NEXT COLLECTION WITH MOVING TRUCK -->
+          <div class="dash-card" style="grid-column: span 2;">
+            <div class="dash-label">Next Collection on Your Street</div>
+            <div class="dash-value sm">Tuesday, 11 November 2026</div>
+            <div class="dash-sub">Expected window: 8:00am – 1:00pm • Kushenla / selected Ikate streets</div>
+
+            <!-- Animated Truck Track -->
+            <div class="truck-track">
+              <div class="truck-label">Truck en route visualization</div>
+              <div class="truck-road"></div>
+              <div class="truck">
+                <i class="fas fa-truck"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-card">
+          <div class="table-header">Payment History</div>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Description</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>28 Oct 2026</td>
+                  <td>October Waste Collection</td>
+                  <td>₦18,500</td>
+                  <td><span class="badge pending">Pending</span></td>
+                </tr>
+                <tr>
+                  <td>29 Sep 2026</td>
+                  <td>September Waste Collection</td>
+                  <td>₦18,500</td>
+                  <td><span class="badge paid">Paid</span></td>
+                </tr>
+                <tr>
+                  <td>28 Aug 2026</td>
+                  <td>August Waste Collection</td>
+                  <td>₦18,500</td>
+                  <td><span class="badge paid">Paid</span></td>
+                </tr>
+                <tr>
+                  <td>29 Jul 2026</td>
+                  <td>July Waste Collection</td>
+                  <td>₦18,500</td>
+                  <td><span class="badge paid">Paid</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="upload-area hidden" id="uploadArea" style="margin-top:20px;">
+          <div style="background:white;border:2px dashed var(--border);border-radius:14px;padding:36px;text-align:center;">
+            <i class="fas fa-cloud-upload-alt" style="font-size:2.3rem;color:var(--accent);margin-bottom:12px;"></i>
+            <h4 style="margin-bottom:6px;color:var(--dark);">Upload Payment Receipt</h4>
+            <p style="color:var(--text-muted);margin-bottom:16px;font-size:0.9rem;">Select your bank transfer receipt (JPG, PNG or PDF)</p>
+            <input type="file" id="receiptFile" accept="image/*,.pdf" style="margin-bottom:16px;" />
+            <div>
+              <button class="btn btn-primary" id="submitReceiptBtn">Submit for Verification</button>
+              <button class="btn btn-outline" id="cancelUploadBtn" style="margin-left:8px;">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-icon"><i class="fas fa-recycle"></i></span>
+            <span class="logo-text">JURICHEST</span>
+          </a>
+          <p>Professional waste management for selected areas in Lekki. LAWMA-approved.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="services.html">Services</a>
+          <a href="about.html">About Us</a>
+          <a href="areas.html">Service Areas</a>
+          <a href="portal.html">Customer Portal</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <a href="services.html">Residential Collection</a>
+          <a href="services.html">Commercial Services</a>
+          <a href="services.html">Special Collections</a>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p><i class="fas fa-phone"></i> +234 XXX XXX XXXX</p>
+          <p><i class="fas fa-envelope"></i> info@jurichest.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Lekki, Lagos</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 JURICHEST Limited. All rights reserved.</p>
+        <p>LAWMA Registered Private Sector Participant</p>
+      </div>
+    </div>
+  </footer>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>

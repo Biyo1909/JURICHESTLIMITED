@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Service Areas | JURICHEST Limited</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon"><i class="fas fa-recycle"></i></span>
+        <span class="logo-text">JURICHEST</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="areas.html" class="nav-link active">Service Areas</a>
+        <a href="portal.html" class="nav-link">Customer Portal</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="portal.html" class="btn btn-outline btn-sm">Login</a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Request Service</a>
+        <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Service Areas</h1>
+      <p>We serve specific streets and parts of Lekki — not the entire corridor.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Where We Work</span>
+        <h2>Our Collection Coverage</h2>
+        <p>JURICHEST Limited currently operates in the following areas and streets. Coverage is focused and deliberate.</p>
+      </div>
+
+      <div class="areas-grid reveal">
+        <div class="area-item"><i class="fas fa-map-pin"></i> Most parts of Ikate</div>
+        <div class="area-item"><i class="fas fa-map-pin"></i> Kushenla Road & environs</div>
+        <div class="area-item"><i class="fas fa-map-pin"></i> Folix Club Area</div>
+        <div class="area-item"><i class="fas fa-map-pin"></i> Selected streets in Ikate</div>
+        <div class="area-item"><i class="fas fa-map-pin"></i> Freedom Way (selected parts)</div>
+        <div class="area-item"><i class="fas fa-map-pin"></i> Surrounding streets & estates</div>
+      </div>
+
+      <p class="reveal" style="text-align:center;margin-top:40px;color:var(--text-muted);max-width:560px;margin-left:auto;margin-right:auto;">
+        <i class="fas fa-info-circle" style="color:var(--accent);"></i>
+        We do <strong>not</strong> cover the entire Ikate or all of Lekki. If your street is within the areas above, contact us to confirm exact coverage and schedule.
+      </p>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container reveal">
+      <h2>Is Your Street Covered?</h2>
+      <p>Send us your exact location — we’ll confirm if we currently serve your street.</p>
+      <a href="contact.html" class="btn btn-white btn-lg">Check Availability</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <span class="logo-icon"><i class="fas fa-recycle"></i></span>
+            <span class="logo-text">JURICHEST</span>
+          </a>
+          <p>Professional waste management for selected areas in Lekki. LAWMA-approved.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="services.html">Services</a>
+          <a href="about.html">About Us</a>
+          <a href="areas.html">Service Areas</a>
+          <a href="portal.html">Customer Portal</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <a href="services.html">Residential Collection</a>
+          <a href="services.html">Commercial Services</a>
+          <a href="services.html">Special Collections</a>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p><i class="fas fa-phone"></i> +234 XXX XXX XXXX</p>
+          <p><i class="fas fa-envelope"></i> info@jurichest.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Lekki, Lagos</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 JURICHEST Limited. All rights reserved.</p>
+        <p>LAWMA Registered Private Sector Participant</p>
+      </div>
+    </div>
+  </footer>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
